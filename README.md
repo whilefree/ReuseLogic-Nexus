@@ -2,8 +2,6 @@ ReuseLogic Nexus
 
 Advanced OOP Solution for Godot 4.2 Created By "https://www.youtube.com/@whilefree"
 
-You are allowed to pass the addon and this read-me file to your friends, but you are not allowed to change/remove this read-me file from the addon.
-
 The addon is going to be uploaded to Godot AssetLib when I make sure it's bug-free and ready to use.
 
 Don't base your actual projects on it "yet". Or if you do, do it at your own risk.
