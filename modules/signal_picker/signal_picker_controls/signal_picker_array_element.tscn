@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dufdm2lk5w41o"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_controls/signal_picker_drop_down.gd" id="1_c6rn2"]
+
+[node name="SignalPickerElement" type="HBoxContainer"]
+alignment = 1
+
+[node name="SignalPickerDropDown" type="OptionButton" parent="."]
+layout_mode = 2
+tooltip_text = "SignalPicker: The list of Signals inside the first Brain parent up in the Hierarchy."
+script = ExtResource("1_c6rn2")
+
+[node name="Remove" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Removes the SignalPicker from the Array."
+text = "Remove"
+
+[connection signal="item_selected" from="SignalPickerDropDown" to="SignalPickerDropDown" method="_on_item_selected"]
+[connection signal="pressed" from="Remove" to="SignalPickerDropDown" method="_remove_element"]

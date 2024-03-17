@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6pqq1peqrg4y"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_controls/signal_picker_drop_down.gd" id="1_8iavq"]
+
+[node name="SignalPickerDropDown" type="OptionButton"]
+tooltip_text = "SignalPicker: The list of Signals inside the first Brain parent up in the Hierarchy."
+script = ExtResource("1_8iavq")
+
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]

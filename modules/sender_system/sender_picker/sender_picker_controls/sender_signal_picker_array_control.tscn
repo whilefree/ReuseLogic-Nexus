@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cncvvug5h7m8g"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/sender_system/sender_picker/sender_picker_controls/sender_signal_picker_array_control.gd" id="1_c5i2y"]
+
+[node name="SenderSignalPickerArrayControl" type="VBoxContainer"]
+script = ExtResource("1_c5i2y")
+
+[node name="AddElement" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Adds a new Sender/Signal Pair to the Array"
+text = "Add Sender/Signal"
+
+[connection signal="pressed" from="AddElement" to="." method="_add_element"]

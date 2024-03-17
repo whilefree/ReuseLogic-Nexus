@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo63o4a02hg24"]
+
+[ext_resource type="PackedScene" uid="uid://cprij2iq7p0c6" path="res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_controls/signal_picker_group_control.tscn" id="1_i7rwv"]
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_controls/signal_picker_group_control.gd" id="2_qpx50"]
+
+[node name="SignalPickerGroupArrayElement" type="HBoxContainer"]
+tooltip_text = "SignalPickerGroup: A group consisting of a SignalPicker, and an Array of SignalPickers. The use case is for Signal Driven States, when emitting one signal is going to emit an array of signals."
+
+[node name="SignalPickerGroupControl" parent="." instance=ExtResource("1_i7rwv")]
+layout_mode = 2
+tooltip_text = ""
+script = ExtResource("2_qpx50")
+
+[node name="RemoveGroup" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Removes the SignalPickerGroup from the Array."
+text = "Remove Group"
+
+[connection signal="pressed" from="RemoveGroup" to="SignalPickerGroupControl" method="_remove_element"]

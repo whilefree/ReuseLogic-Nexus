@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfsrqod2kfkta"]
+
+[ext_resource type="PackedScene" uid="uid://cjq6vrihm4vlu" path="res://addons/reuse_logic_nexus/modules/global_signal_system/global_signal_picker/global_signal_picker_controls/global_local_signal_pair_control.tscn" id="1_v6huy"]
+
+[node name="GlobalLocalSignalPairArrayElement" type="HBoxContainer"]
+
+[node name="GlobalLocalSignalPairControl" parent="." instance=ExtResource("1_v6huy")]
+layout_mode = 2
+
+[node name="Remove" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Removes the Signal Pair from the Array"
+text = "Remove"
+
+[connection signal="pressed" from="Remove" to="GlobalLocalSignalPairControl" method="_on_remove_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8kt0f1r5lqd1"]
+
+[ext_resource type="PackedScene" uid="uid://bwsk30tfmi6m" path="res://addons/reuse_logic_nexus/modules/sender_system/sender_picker/sender_picker_controls/sender_signal_picker_control.tscn" id="1_iewvd"]
+
+[node name="SenderSignalPickerArrayElement" type="HBoxContainer"]
+
+[node name="SignalSenderPickerControl" parent="." instance=ExtResource("1_iewvd")]
+layout_mode = 2
+
+[node name="Remove" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Removes the Sender/Signal Pair from the Array"
+text = "Remove"
+
+[connection signal="pressed" from="Remove" to="SignalSenderPickerControl" method="_on_remove_pressed"]

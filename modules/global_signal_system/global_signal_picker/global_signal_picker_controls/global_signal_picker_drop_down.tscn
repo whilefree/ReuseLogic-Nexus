@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbnfc65ibg7b4"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/global_signal_system/global_signal_picker/global_signal_picker_controls/global_signal_picker_drop_down.gd" id="1_1siqp"]
+
+[node name="GlobalSignalPickerDropDown" type="OptionButton"]
+tooltip_text = "GlobalSignalPicker: The list of Signals inside the global SignalList autoload"
+script = ExtResource("1_1siqp")
+
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]

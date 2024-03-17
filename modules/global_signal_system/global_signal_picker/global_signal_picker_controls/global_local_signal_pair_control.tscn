@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjq6vrihm4vlu"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/global_signal_system/global_signal_picker/global_signal_picker_controls/global_local_signal_pair_control.gd" id="1_fkuef"]
+[ext_resource type="PackedScene" uid="uid://bbnfc65ibg7b4" path="res://addons/reuse_logic_nexus/modules/global_signal_system/global_signal_picker/global_signal_picker_controls/global_signal_picker_drop_down.tscn" id="2_fm47y"]
+[ext_resource type="PackedScene" uid="uid://b6pqq1peqrg4y" path="res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_controls/signal_picker_drop_down.tscn" id="3_26qmm"]
+
+[node name="GlobalLocalSignalPairControl" type="HBoxContainer"]
+script = ExtResource("1_fkuef")
+
+[node name="GlobalSignalPickerDropDown" parent="." instance=ExtResource("2_fm47y")]
+layout_mode = 2
+
+[node name="SignalPickerDropDown" parent="." instance=ExtResource("3_26qmm")]
+layout_mode = 2

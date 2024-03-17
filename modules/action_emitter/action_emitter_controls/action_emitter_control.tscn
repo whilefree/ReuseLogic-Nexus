@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://co8p3u415ucgg"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/action_emitter/action_emitter_controls/action_emitter_control.gd" id="1_hadnd"]
+[ext_resource type="PackedScene" uid="uid://b6pqq1peqrg4y" path="res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_controls/signal_picker_drop_down.tscn" id="1_m5o5a"]
+
+[node name="ActionEmitterControl" type="HBoxContainer"]
+offset_right = 456.0
+offset_bottom = 31.0
+script = ExtResource("1_hadnd")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Enter the InputMap Action name here."
+placeholder_text = "Action Name here..."
+
+[node name="SignalPickerDropDown" parent="." instance=ExtResource("1_m5o5a")]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "SignalPicker: The list of Signals inside the first Brain parent up in the Hierarchy. Will be emitted when the InputMap Action is triggered."
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]

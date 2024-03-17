@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwsk30tfmi6m"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/sender_system/sender_picker/sender_picker_controls/sender_signal_picker_control.gd" id="1_sdcyp"]
+[ext_resource type="PackedScene" uid="uid://dawv6a2wr8apo" path="res://addons/reuse_logic_nexus/modules/sender_system/sender_picker/sender_picker_controls/sender_picker_drop_down.tscn" id="2_q8owb"]
+[ext_resource type="PackedScene" uid="uid://b6pqq1peqrg4y" path="res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_controls/signal_picker_drop_down.tscn" id="3_4t51l"]
+
+[node name="SenderSignalPickerControl" type="HBoxContainer"]
+script = ExtResource("1_sdcyp")
+
+[node name="SenderPickerDropDown" parent="." instance=ExtResource("2_q8owb")]
+layout_mode = 2
+
+[node name="SignalPickerDropDown" parent="." instance=ExtResource("3_4t51l")]
+layout_mode = 2

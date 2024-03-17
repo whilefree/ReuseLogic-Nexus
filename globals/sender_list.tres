@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SenderListResource" load_steps=2 format=3 uid="uid://g5nwgvc2iunt"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/sender_system/sender_list.gd" id="1_fgjb0"]
+
+[resource]
+script = ExtResource("1_fgjb0")
+sender_list = Array[String](["Coin", "Diamond"])

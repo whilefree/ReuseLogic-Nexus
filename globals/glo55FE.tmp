@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GlobalSignalListResource" load_steps=4 format=3 uid="uid://dlvvjb1b1fiq3"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/global_signal_system/global_signal_list.gd" id="1_5rsd4"]
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/brain_system/signal_list.gd" id="2_doy0d"]
+
+[sub_resource type="Resource" id="Resource_g0vgh"]
+script = ExtResource("2_doy0d")
+signal_list = Array[String](["a", "b", "c", "d", "e"])
+
+[resource]
+script = ExtResource("1_5rsd4")
+signal_list_resource = SubResource("Resource_g0vgh")
+signal_list = Array[String](["a", "b", "c", "d", "e"])

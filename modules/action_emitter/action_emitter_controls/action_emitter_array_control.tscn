@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dljl3xsy5iohg"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/action_emitter/action_emitter_controls/action_emitter_array_control.gd" id="1_my1c1"]
+
+[node name="ActionEmitterArrayControl" type="VBoxContainer"]
+script = ExtResource("1_my1c1")
+
+[node name="AddElement" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Adds a new ActionEmitter to the Array"
+text = "Add ActionEmitter"
+
+[connection signal="pressed" from="AddElement" to="." method="_add_element"]

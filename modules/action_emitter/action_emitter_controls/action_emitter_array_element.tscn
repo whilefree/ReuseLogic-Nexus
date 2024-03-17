@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://djdug32krwmig"]
+
+[ext_resource type="PackedScene" uid="uid://co8p3u415ucgg" path="res://addons/reuse_logic_nexus/modules/action_emitter/action_emitter_controls/action_emitter_control.tscn" id="1_o4172"]
+
+[node name="ActionEmitterArrayElement" type="HBoxContainer"]
+offset_right = 320.0
+offset_bottom = 31.0
+
+[node name="ActionEmitterControl" parent="." instance=ExtResource("1_o4172")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Remove" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+tooltip_text = "Removes the ActionEmitter from the Array"
+text = "Remove"
+
+[connection signal="pressed" from="Remove" to="ActionEmitterControl" method="_on_remove_pressed"]

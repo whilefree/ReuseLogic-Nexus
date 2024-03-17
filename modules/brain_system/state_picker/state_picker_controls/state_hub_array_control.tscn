@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjj55ktkg4os6"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/brain_system/state_picker/state_picker_controls/state_hub_array_control.gd" id="1_yx0yh"]
+
+[node name="StateHubArrayControl" type="VBoxContainer"]
+script = ExtResource("1_yx0yh")
+
+[node name="AddElement" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Adds a new StateHub to the Array"
+text = "Add StateHub"
+
+[connection signal="pressed" from="AddElement" to="." method="_add_element"]

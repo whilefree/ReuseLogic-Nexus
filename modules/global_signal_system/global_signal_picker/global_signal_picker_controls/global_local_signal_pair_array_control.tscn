@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://baskro332nxbd"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/global_signal_system/global_signal_picker/global_signal_picker_controls/global_local_signal_pair_array_control.gd" id="1_y6t4x"]
+
+[node name="GlobalLocalSignalPairArrayControl" type="VBoxContainer"]
+script = ExtResource("1_y6t4x")
+
+[node name="AddElement" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Adds a new Signal Pair to the Array"
+text = "Add Signal Pair"
+
+[connection signal="pressed" from="AddElement" to="." method="_add_element"]

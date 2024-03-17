@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dawv6a2wr8apo"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/sender_system/sender_picker/sender_picker_controls/sender_picker_drop_down.gd" id="1_6ijyh"]
+
+[node name="SenderPickerDropDown" type="OptionButton"]
+tooltip_text = "SenderPicker: The list of Senders inside the global SenderList autoload"
+script = ExtResource("1_6ijyh")
+
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]

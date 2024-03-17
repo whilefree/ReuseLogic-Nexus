@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7l5vo2po1gir"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/brain_system/state_picker/state_picker_controls/state_picker_drop_down.gd" id="1_lfggt"]
+
+[node name="StatePickerDropDown" type="OptionButton"]
+tooltip_text = "StatePicker: The list of States inside the Brain"
+script = ExtResource("1_lfggt")
+
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]

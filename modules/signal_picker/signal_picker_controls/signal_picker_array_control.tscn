@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bac7hmyxeib8y"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_controls/signal_picker_array_control.gd" id="1_l06mn"]
+
+[node name="SignalPickerArrayControl" type="VBoxContainer"]
+script = ExtResource("1_l06mn")
+
+[node name="AddElement" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Adds a new SignalPicker to the Array"
+text = "Add SignalPicker"
+
+[connection signal="pressed" from="AddElement" to="." method="_add_element"]

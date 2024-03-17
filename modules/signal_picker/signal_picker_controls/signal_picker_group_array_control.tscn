@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctu26y3cjiy5a"]
+
+[ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_controls/signal_picker_group_array_control.gd" id="1_dqwlg"]
+
+[node name="SignalPickerGroupArrayControl" type="VBoxContainer"]
+tooltip_text = "SignalPickerGroupArray: An array consisting of SignalPickerGroups."
+script = ExtResource("1_dqwlg")
+
+[node name="AddSignalGroup" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "Adds a new SignalPickerGroup to the Array."
+text = "Add Singal Group"
+
+[connection signal="pressed" from="AddSignalGroup" to="." method="_add_element"]
