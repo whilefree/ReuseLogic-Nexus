@@ -1,5 +1,6 @@
-# ReuseLogic-Nesux
- Advanced OOP Solution for Godot 4.2 Created By "https://www.youtube.com/@whilefree"
+ReuseLogic Nexus
+
+Advanced OOP Solution for Godot 4.2 Created By "https://www.youtube.com/@whilefree"
 
 You are allowed to pass the addon and this read-me file to your friends, but you are not allowed to change/remove this read-me file from the addon.
 
