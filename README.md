@@ -15,3 +15,7 @@ Support me by watching the videos, subscribing to my channel, reporting any bugs
 https://www.youtube.com/@whilefree
 
 Thank you for your support. Have a great Object Orientalization... :)
+
+
+Installation Guide:
+Add the "addons" folder to your Godot project directory, and place the addon inside that folder. Keep it in mind that the addon folder must be named: "reuse_logic_nexus".
