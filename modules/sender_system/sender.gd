@@ -13,16 +13,14 @@ var _brain:Brain
 @export var sender_type:SenderPicker
 
 func _ready():
-	if send_signal && !Engine.is_editor_hint():
+	if !Engine.is_editor_hint():
 		_brain = ReuseLogicNexus.get_brain_up(self)
-		_brain.connect(send_signal.signal_name, send)
+		_brain.register_signal(send_signal, send)
 
 func send(data):
 	if !data.has("sender_target"):
 		push_error("The Sender Module needs a 'sender_target' to work properly. Pass it in the data dicitonary when emitting the 'send_signal'")
 		return
-	data["sender_owner"] = owner
-	data["sender"] = self
 	var brain = ReuseLogicNexus.get_brain_down(data["sender_target"])
 	if brain:
 		var children = brain.find_children("","Receiver")
@@ -32,8 +30,12 @@ func send(data):
 			receiver._brain = brain
 			for item in receiver.sender_list.sender_signal_pickers:
 				if item.sender_name == sender_type.sender_name:
-					data["sender_type"] = sender_type.sender_name
-					children[0].receive(data)
+					#erasing the unnecessary information:
+					var new_data = {}
+					new_data["sender_type"] = sender_type.sender_name
+					new_data["sender_owner"] = owner
+					new_data["sender"] = self
+					children[0].receive(new_data)
 
 #Called by the Receiver to inform the Sender of Successful Reception.
 func received(data):

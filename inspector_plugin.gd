@@ -2,6 +2,7 @@ extends EditorInspectorPlugin
 
 var _signal_picker = preload("res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_editor_properties/signal_picker_editor_property.gd")
 var _signal_picker_child = preload("res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_editor_properties/signal_picker_child_editor_property.gd")
+var _signal_picker_sibling = preload("res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_editor_properties/signal_picker_sibling_editor_property.gd")
 var _signal_picker_array = preload("res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_editor_properties/signal_picker_array_editor_property.gd")
 var _signal_picker_group = preload("res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_editor_properties/signal_picker_group_editor_property.gd")
 var _signal_picker_group_array = preload("res://addons/reuse_logic_nexus/modules/signal_picker/signal_picker_editor_properties/signal_picker_group_array_editor_property.gd")
@@ -37,6 +38,10 @@ func _parse_property(object, type, name, hint_type, hint_string, usage_flags, wi
 		if hint_string == "SignalPickerChild":
 			#It's SignalPickerChild.
 			add_property_editor(name, _signal_picker_child.new(object, object[name]))
+			return true
+		if hint_string == "SignalPickerSibling":
+			#It's SignalPickerSibling.
+			add_property_editor(name, _signal_picker_sibling.new(object, object[name]))
 			return true
 		if hint_string == "SignalPickerArray":
 			#It's SignalPickerArray.

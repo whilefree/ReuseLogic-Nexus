@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_fgjb0")
-sender_list = Array[String](["Coin", "Diamond"])
+sender_list = Array[String]([])

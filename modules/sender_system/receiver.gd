@@ -75,7 +75,7 @@ func change_signal(sender_name, signal_name):
 func receive(data = {}):
 	if debug:
 		print_rich("Sender of type: [color=yellow]" + data["sender_type"] + "[/color] sent a message from object: [color=yellow]" + data["sender_owner"].name + "[/color]")
-	#erasing the unnecessary information from the sender:
+	#erasing the unnecessary information:
 	var new_data = {}
 	new_data["sender_type"] = data["sender_type"]
 	new_data["sender_owner"] = data["sender_owner"]
@@ -86,8 +86,14 @@ func receive(data = {}):
 			_brain.emit_signal(item.signal_name, new_data)
 
 func received(data):
-	data["receiver_owner"] = owner
-	data["sender"].received(data)
+	#erasing the unnecessary information:
+	var new_data = {}
+	new_data["sender_type"] = data["sender_type"]
+	new_data["sender_owner"] = data["sender_owner"]
+	new_data["sender"] = data["sender"]
+	new_data["receiver"] = self
+	new_data["receiver_owner"] = owner
+	data["sender"].received(new_data)
 
 func _get_property_list() -> Array:
 	var properties = []

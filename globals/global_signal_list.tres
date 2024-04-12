@@ -10,4 +10,3 @@ signal_list = Array[String]([])
 [resource]
 script = ExtResource("1_5rsd4")
 signal_list_resource = SubResource("Resource_wf0y2")
-signal_list = Array[String]([])

@@ -48,6 +48,18 @@ func get_brain_down(obj)->Brain:
 			continue
 	return null
 
+#iterate down the parent until you catch the first Brain
+func get_brain_sibling(obj)->Brain:
+	var children = obj.get_children()
+	#iterate down the hierarchy until you catch the first Brain
+	for i in range(0,children.size()):
+		if children[i] is Brain:
+			obj = children[i]
+			return obj
+		else:
+			continue
+	return null
+
 #Returns the sender_list Array[String] names
 func get_sender_list():
 	return sender_list.sender_list

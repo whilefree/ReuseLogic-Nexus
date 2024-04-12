@@ -99,6 +99,10 @@ func switch_state(_data = {}):
 	tween = create_tween()
 	tween.tween_callback(initialize_state_tween)
 
+func register_signal(signal_picker, callable:Callable):
+	if signal_picker:
+		connect(signal_picker.signal_name, callable)
+
 #Creates a dictionary containing signal names and signals: key = signal name - value = signal itself
 func _refresh_signals(arr):
 	if !Engine.is_editor_hint():
