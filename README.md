@@ -1,4 +1,4 @@
-ReuseLogic Nexus
+ReuseLogic Nexus v0.1.0-beta
 
 Advanced OOP Solution for Godot 4.2 Created By "https://www.youtube.com/@whilefree"
 
