@@ -14,7 +14,7 @@ Support me by watching the videos, subscribing to my channel, reporting any bugs
 
 https://www.youtube.com/@whilefree
 
-Thank you for your support. Have a great Object Orientalization... :)
+Thank you for your support. Have a great Object Orientization... :)
 
 Installation Guide:
 
