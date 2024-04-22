@@ -83,7 +83,6 @@ func switch_state(_data = {}):
 		tween.kill()
 	var old_state = current_state
 	current_state.stop_state()
-	
 	#Skipping the state if it has state_hub_list which matches the old_state
 	if _data["new_state"].state_hub_list:
 		for s in _data["new_state"].state_hub_list.state_hubs:
@@ -92,7 +91,6 @@ func switch_state(_data = {}):
 					if ch.name == s.direct_state.state_name:
 						ch.switch_state(_data)
 						return
-	
 	if debug:
 		print_rich("State is switching from: [color=green]" + old_state.name + "[/color] to: [color=green]" + _data["new_state"].name + " [/color]")
 	current_state = _data["new_state"]
@@ -102,6 +100,11 @@ func switch_state(_data = {}):
 func register_signal(signal_picker, callable:Callable):
 	if signal_picker:
 		connect(signal_picker.signal_name, callable)
+
+#Intented to be called by Child States, it adds a signal_name to the Signal List as the first entry
+func add_state_signal(signal_name):
+	if !_signal_list.has(signal_name):
+		_signal_list.push_front(signal_name)
 
 #Creates a dictionary containing signal names and signals: key = signal name - value = signal itself
 func _refresh_signals(arr):

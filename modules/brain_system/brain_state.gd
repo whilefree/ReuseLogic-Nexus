@@ -11,6 +11,21 @@ var _brain:Brain
 @export var start_delay:float = 0
 ##The signal used to switch to this state
 @export var start_state_on:SignalPicker
+##Adds the signal name in the field below to the Brain parent
+@export var add_start_signal:bool:
+	get:
+		return add_start_signal
+	set(value):
+		if start_signal_name:
+			brain(self).add_state_signal(start_signal_name)
+			if !start_state_on:
+				start_state_on = SignalPicker.new()
+			start_state_on.signal_name = start_signal_name
+			start_signal_name = ""
+			notify_property_list_changed()
+
+##After entering the signal name, click the button above to add it to the Brain
+@export var start_signal_name:String = ""
 
 @export_group("Raise on Start")
 ##The signals to be emitted when the state is activated
