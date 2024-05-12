@@ -3,10 +3,11 @@
 [ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/global_signal_system/global_signal_list_resource.gd" id="1_5rsd4"]
 [ext_resource type="Script" path="res://addons/reuse_logic_nexus/modules/brain_system/signal_list.gd" id="2_doy0d"]
 
-[sub_resource type="Resource" id="Resource_wf0y2"]
+[sub_resource type="Resource" id="Resource_1p5o3"]
 script = ExtResource("2_doy0d")
 signal_list = Array[String]([])
 
 [resource]
 script = ExtResource("1_5rsd4")
-signal_list_resource = SubResource("Resource_wf0y2")
+signal_list_resource = SubResource("Resource_1p5o3")
+signal_list = Array[String]([])

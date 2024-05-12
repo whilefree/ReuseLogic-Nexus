@@ -17,9 +17,14 @@ var _remove_duplicates:bool = false:
 		update_configuration_warnings()
 		notify_property_list_changed()
 
-@export var signal_list:GlobalLocalSignalPairArray = GlobalLocalSignalPairArray.new()
+@export var signal_list:GlobalLocalSignalPairArray
 
 func _ready():
+	#Must be called to force resource_local_to_scene in the array
+	#In Godot resources in arrays are shared, no matter what.
+	if signal_list:
+		signal_list.force_local_to_scene()
+	
 	var temp = ReuseLogicNexus.get_brain_up(self)
 	if !temp is Brain:
 		push_warning("The GlobalSignalListener Module must be a child of The Brain Node.")
@@ -100,7 +105,7 @@ func _get_property_list() -> Array:
 
 func _get_configuration_warnings():
 	var warnings = []
-	if signal_list.check_global_duplicates():
+	if signal_list && signal_list.check_global_duplicates():
 		warnings.append("There are duplicate entries in the 'Signal List'. There must be no duplicates of 'Global Signals' inside the 'Signal List'. This is against the OOP principles maintained by ReuseLogicNexus and also may cause unexpected behavior.")
 		_duplicate_show = true
 		notify_property_list_changed()

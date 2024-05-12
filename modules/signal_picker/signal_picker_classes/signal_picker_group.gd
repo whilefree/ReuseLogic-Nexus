@@ -7,6 +7,9 @@ extends Resource
 var _brain:Brain
 var _state:BrainState
 
+func _init():
+	resource_local_to_scene = true
+
 func enable(brain:Brain, state:BrainState):
 	_brain = brain
 	_state = state

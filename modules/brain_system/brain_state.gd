@@ -51,6 +51,11 @@ var tween:Tween
 var check
 
 func _ready():
+	#Must be called to force resource_local_to_scene in the array
+	#In Godot resources in arrays are shared, no matter what.
+	if raise_on_listen:
+		raise_on_listen.force_local_to_scene()
+	
 	brain(self)
 	if _brain:
 		if start_state_on:

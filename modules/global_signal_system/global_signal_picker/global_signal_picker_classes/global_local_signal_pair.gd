@@ -1,3 +1,4 @@
+@tool
 class_name GlobalLocalSignalPair
 extends Resource
 
@@ -10,6 +11,10 @@ var _global_listener_mode = true
 
 var _brain:Brain
 
+#new
+func _init():
+	resource_local_to_scene = true
+
 func enable(brain:Brain, listener_mode = true):
 	_brain = brain
 	_global_listener_mode = listener_mode
@@ -19,7 +24,6 @@ func enable(brain:Brain, listener_mode = true):
 	else:
 		if !_brain.is_connected(local_signal.signal_name, Callable(self,"_raise")):
 			_brain.connect(local_signal.signal_name, Callable(self,"_raise"))
-			
 
 func disable():
 	if _global_listener_mode:
